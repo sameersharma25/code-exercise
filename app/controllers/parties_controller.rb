@@ -21,6 +21,8 @@ class PartiesController < ApplicationController
 
   def create
     @party = Party.new
+    # Not 100% sure since I am not running this code, but the check below seems unecessary and unconventional to me to change user params.
+    # this is also taken care of in model validation to set numgsts to 0 if not populated.
     if params[:party][:numgsts].blank?
       params[:party][:numgsts]=0
     end
